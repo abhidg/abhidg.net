@@ -60,6 +60,9 @@ ul.nobullets li {
 	margin-bottom: 8px;
 }
 
+ul#tags li {
+	margin-bottom: 4px;
+}
 ul#paper-reviews li {
 	margin-bottom: 10px;
 }
@@ -86,6 +89,11 @@ div#left li {
 	margin-bottom: 8px;
 }
 
+a[rel="external"] {
+	background:url(images/external.png) 99% 40% no-repeat;
+	padding-right: 15px;
+}
+
 span.small {
 	font-size: 90%;
 }
@@ -106,6 +114,15 @@ h1 {
 	color: #7A7674
 }
 
+span.gold {
+	color: darkgoldenrod;
+}
+span.course {
+	color: saddlebrown;
+}
+span.project {
+	color: olivedrab;
+}
 span.p1 { font-size:small}
 span.p3 { font-size:large }
 span.p4 {font-size:x-large}

@@ -28,20 +28,14 @@ handlers:
   static_files: interests.html
   upload: interests.html
 
-- url: /writings
-  script: redirect.py
-  
-- url: /writings/
+- url: /writings.html
   static_files: writings.html
   upload: writings.html
   
-- url: /projects
-  script: redirect.py
-
-- url: /projects/
+- url: /projects.html
   static_files: projects.html
   upload: projects.html
-  
+
 - url: /writings/(.*)
   static_files: writings/\1
   upload: writings/(.*)

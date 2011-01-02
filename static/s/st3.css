@@ -5,7 +5,7 @@ body {
 
 p#bc {
 	font-size:75%;
-	color: grey
+	color: #a9a9a9
 }
 p#bc a {
 	color:grey;
@@ -90,7 +90,7 @@ div#left li {
 }
 
 a[rel="external"] {
-	background:url(images/external.png) 99% 40% no-repeat;
+	background:url(/images/external.png) 99% 40% no-repeat;
 	padding-right: 15px;
 }
 
@@ -111,7 +111,8 @@ h1 {
 	font-family: "HeleveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, sans-serif;
 	font-weight: 300;
 	font-size: 175%;
-	color: #7A7674
+	color: #7A7674;
+	margin-top: -5px;
 }
 
 span.gold {

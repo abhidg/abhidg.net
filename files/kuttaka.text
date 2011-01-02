@@ -1,0 +1,160 @@
+% Kuttaka Method
+% Abhishek Dasgupta
+
+<p style="background:#fffec5; padding:3px">Term paper for <a 
+href="http://iiserk.ath.cx/art/202">ART202</a> course, 
+spring 2008, written by <a href="/">Abhishek Dasgupta</a>.</p>
+
+Kuttaka is 'pulveriser' in Sanskrit.
+
+What could a pulveriser be doing in Mathematics? As we shall see
+the name is very apt, and one has to admire the genius of its creator
+Aryabhata I of India, who in 4th century A.D. used it to solve
+linear indeterminate equations. However though the Kuttaka method was
+used mostly for solving linear indeterminate equations, the concept
+which Aryabhata seeded has later found root in modern mathematics through
+the works of Bachet, Fermat and others. First, however we must turn to
+diophantine equations, for these are the equations which Kuttaka solves.
+
+## diophantine ##
+
+Often called the "father of algebra", Diophantus of Alexandria is the
+person to whom Diophantine equations owe their name. A Diophantine
+equation is an indeterminate equation whose solutions are integers.
+For example a linear indeterminate equation would look like:
+
+*ax + by = c*
+
+where a,x,b,y and c are all integers. Similarly:
+
+*a^n^ + b^n^ = c^n^*
+
+where all the numbers are integers is also a diophantine equation, though
+this one is a nonlinear one. That this equation has no roots for a, b, c > 0
+and n > 2 is in fact the statement of Fermat's Last Theorem proposed by Pierre
+de Fermat as a marginal note of his copy of Arithmetica (Bachet?, 1621 edition).
+FLT was finally solved by Andrew Wiles in October 1994.
+
+While first degree diophantine equations can be solved fairly easily using the
+algorithm found by Aryabhata in 5th century AD, no general method is known for
+solving diophantine equations of quadratic or higher degree. One of the examples
+is *x^2^ + Dy^2^ = 1* (Pell's equation) for which Brahmagupta gave an algorithm later
+in the 7th - 11th century AD.
+
+Though the Kuttaka method was given by Aryabhata in the 4th century AD, indeterminate
+equations were studied before him by Baudhyana and others in the *sulbsutras*. We find
+examples of calculating brick length to ensure stability in structures in the
+**Baudhayana** sulbasutra. Also the construction of the falcon-shaped altar required
+solution of indeterminate equations.
+
+## pulverise ##
+
+Pulverise what?<br/>
+Numbers.
+
+Grind up the numbers into small pieces, find some relation between the smallest
+parts and reconstruct the entire picture. It is like zooming in on a landscape,
+figuring out something and go on understanding every level above that. That's how
+a cook or a pilot would probably put it. Aryabhata discovered it in 4th century
+and he described it in just two stanzas of his monumental work, the Aryabhatiya
+(verses 32 and 33 of the 'Ganita' section) His cryptic verses were elaborated by Bhaskara I (6th century AD) in his commentary Aryabhatiyabhasya. Bhaskara I
+illustrated Aryabhata's rule with several examples including 24 concrete problems
+from astronomy. Without the explanation of Bhaskara I, it would have
+been difficult to interpret Aryabhata's verses (see [2] for details).
+
+The Kuttaka was also discussed with a number of refinements to it by later Indian
+mathematicians including Brahmagupta (628 AD), Mahavira (850), Aryabhata II (950),
+Sripati (1039), Bhaskara II (1150) and Narayana (1350). Kuttaka was considered so important by the early Indians that Brahmagupta even used to call algebra
+kuttaka-ganita!
+
+## the algorithm ##
+
+When you take an equation of the form ax + by = c, you can't solve it all if the
+a factor dividing a and b both is not also a factor of c. That's quite easy to see:
+take a = dp and b = dq where (p,q) = 1 then dpx + dqy = c; or d(px+qy) = c; thus
+d | c. So we can now divide both sides by d and get px + qy = r where (p,q) = 1. This
+equation will have the same solution as ax + by = c.
+
+- Let's take: 13x + 17y = 12.
+- First we verify that indeed (13,17) = 1, otherwise we will divide by the
+  HCF of 13 and 17.
+- Then 17 is written as 13x1 + 4.
+- 13 is written as 4x3 + 1.
+- Thus the process involves dividing (pulverising) the coefficients into a quotient
+  and remainder part. The quotient and the remainder for this part become the dividend
+  and the quotient for the next step.
+- Now we can write 17 in terms of 13 and 4 whereas 13 can be written in terms of 4
+  and 1. Thus 13x + 7y can be written as 4a + b = 12 whose solution is trivial: (t,
+  12 - 4t). Let's take t = 2, so the solution for this pulverised equation is (2,4).
+- Now we'll work backwards to find the solution.
+ - 4x2 + 4 = 12
+ - (17-13)x2 + (17-13) = 12
+ - 17x3 - 13x3 = 12
+- So a solution is (-3,3).
+
+Okay, so this one might have been easy because 4 | b. What if it did not?
+Let's take 12x + 5y = 7 now and see what happens.
+
+- 12 = 5x2 + 2
+- 5 = 2x2 + 1
+- so 2x + y = 7, solutions (t, 7-2t) now take t = 2, so solution (2,3)
+ - 2x2 + 3 = 7
+ - (12-5x2)x2 + 3x1 = 7
+ - (12-5x2)x2 + 3x(5-2x2) = 7
+ - (12-5x2)x2 + 3x(5 - (12-5x2)x2) = 7
+ - (12x2) - (5x4) + 3x( -(12x2) + (5x5) ) = 7
+ - 12x(-4) - 5x11 = 7
+- Thus a solution of 12x + 5y = 7 is (-4,11). It is worthwhile to notice the beautiful
+  way in which the solutions build up from a very simple answer to the full solution.
+  This is the power of the Kuttaka.
+
+### historical examples ###
+
+After the invention of the Kuttaka or pulverisation, it was referred to by Brahmagupta
+and Bhaskara. They give a number of examples of using the Kuttaka directly or using
+it as a base for solving problems. Some of the well known historical problems are [0]:
+
+- (Bhaskara I; 6th century) Find the least natural
+number N which leaves the remainder 1 when divided
+by 2,3,4,5 or 6 but is exacyly divisible by 7. [Ans : 301]
+This problem also occurs in Ibn-al-Hait am (1000 AD)
+and Leonardo Fibonacci (1202 AD).
+- (Brahmagupta 628 AD) Find the least natural
+number N which on division by 6,5,4,3, leave the remainders
+5,4,3,2, respectively. [Ans : 59]
+- (Bhaskara I) Find the least number N which when
+divided by 8 leaves 5 (as remainder), divided by 9 leaves
+4 and divided by 7 leaves 1. [Ans: 85]
+- (Mahavira 850 AD) Five heaps of fruits added with
+two fruits were divided (equally) between nine travellers;
+six heaps added with four were divided amongst eight ;
+four heaps increased by one were divided amongst seven.
+Tell the number of fruits in each heap. [(Least ) Ans:
+194]
+
+## kuttaka and modern mathematics ##
+
+While the Kuttaka is certainly useful as an algorithm for solving linear indeterminate
+equations, what is often overlooked is the specific nature of the algorithm. No such
+algorithm had been proposed before which used a recursive breaking down technique.
+Such an idea was rediscovered by Fermat in his Principle of *Infinite Descent* which
+he successfully used to solve many difficult problems in number theory.
+
+The integer solution of the linear diophantine equation was rediscovered in Europe for
+the first time in 1621 AD by Bachet, 1122 years after Aryabhata which was rediscovered
+by Euler in 1735. Fermat developed on this idea creating his celebrated infinite
+descent principle. For example he proved that *x^4^ + y^4^ = z^2^* has no integer solutions using this method. The similarity between the two methods is amazing, and Andre Weil (1906-1999) remarked: "In later Sanskrit texts this became known as the kuttaka (= 'pulveriser') method; a fitting name, recalling to our mind Fermat's infinite
+descent".
+
+## references ##
+
+Primary references:
+
+0. Amartya Kumar Dutta, Mathematics in Ancient India - Diophantine equations, the
+   Kuttaka Resonance Vol 7 No 4 pp 4-19.
+1. Kuttaka method, <http://cs.annauniv.edu/insight/insight/maths/algebra/indet/kuttaka.htm>
+
+A list of references for further reading can be found in [0].
+
+
+

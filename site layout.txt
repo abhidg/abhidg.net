@@ -1,0 +1,22 @@
+/\ home icon:
+
+projects |
+
+writings
+
+interests.html
+
+journal ->
+
+notes ->
+
+code
+
+cv
+
+nothing should be more than one level deep, ideally.
+
+no retyping of stuff. Start writing makefiles already.
+
+
+

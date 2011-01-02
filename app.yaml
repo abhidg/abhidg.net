@@ -1,0 +1,54 @@
+application: abhidg 
+version: 2
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /files/.*
+  script: redirect.py
+  
+- url: /(.*\.pdf)
+  static_files: files/\1
+  upload: files/(.*\.pdf)
+
+- url: /(.*\.(gif|png|jpg|jpeg|css))
+  static_files: static/\1
+  upload: static/(.*\.(gif|png|jpg|jpeg|css))
+  
+- url: /interests
+  static_files: interests.html
+  upload: interests.html
+ 
+- url: /interests.html
+  static_files: interests.html
+  upload: interests.html
+
+- url: /writings
+  script: redirect.py
+  
+- url: /writings/
+  static_files: writings.html
+  upload: writings.html
+  
+- url: /projects
+  script: redirect.py
+
+- url: /projects/
+  static_files: projects.html
+  upload: projects.html
+  
+- url: /writings/(.*)
+  static_files: writings/\1
+  upload: writings/(.*)
+
+- url: /projects/(.*)
+  static_files: projects/\1
+  upload: projects/(.*)
+
+- url: /images
+  static_dir: images

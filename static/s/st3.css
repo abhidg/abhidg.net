@@ -124,6 +124,8 @@ h1 {
 	margin-bottom: -7px;
 }
 
+ul.cv li { font-size: 80% }
+span.y { color:#777}
 span.gold {
 	color: darkgoldenrod;
 }

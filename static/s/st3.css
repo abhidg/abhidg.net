@@ -26,6 +26,7 @@ div#content {
 	margin-left: 135px;
 }
 
+dd { color: #404040}
 div#left {
 	float: left;
 	width: 135px;
@@ -83,6 +84,13 @@ div#left li {
 	color: #C18E42;
 }
 
+p#address { line-height: 1.3}
+dd,dl,dt { line-height: 1.2}
+dd { margin-bottom: 10px; margin-left: 10px;
+font-size:90%;}
+dt {margin-bottom:2px}
+p { line-height: 1.2}
+dl { font-size: 90% }
 div#left li {
 	margin-left: -10px;
 	padding: 0px;

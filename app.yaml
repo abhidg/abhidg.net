@@ -36,6 +36,10 @@ handlers:
   static_files: projects.html
   upload: projects.html
 
+- url: /cv.html
+  static_files: cv.html
+  upload: cv.html
+
 - url: /writings/(.*)
   static_files: writings/\1
   upload: writings/(.*)
